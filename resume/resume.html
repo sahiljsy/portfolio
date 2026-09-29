@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sahil Jariwala – Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    font-size: 9.9pt;
+    line-height: 1.32;
+    color: #1a1f2b;
+    -webkit-print-color-adjust: exact;
+  }
+  .page { width: 210mm; padding: 11mm 13mm 8mm; }
+  a { color: inherit; text-decoration: none; }
+  header { margin-bottom: 7pt; }
+  h1 { font-size: 21pt; font-weight: 700; letter-spacing: -0.2pt; margin: 0; color: #13203a; }
+  .headline { font-size: 11pt; font-weight: 600; color: #2b55d6; margin: 1pt 0 3pt; }
+  .contact { font-size: 9.4pt; color: #3a4457; }
+  .contact span + span::before { content: "|"; margin: 0 5pt; color: #9aa4b5; }
+  .contact div + div { margin-top: 1pt; }
+  h2 {
+    font-size: 10.2pt; font-weight: 700; color: #13203a; letter-spacing: 0.3pt;
+    margin: 9pt 0 4pt; padding-bottom: 2pt; border-bottom: 1.2pt solid #2b55d6;
+  }
+  p { margin: 0; }
+  .role { display: flex; justify-content: space-between; align-items: baseline; margin-top: 4pt; }
+  .role strong { font-size: 10.3pt; }
+  .role .when { font-size: 9.4pt; color: #3a4457; white-space: nowrap; }
+  .sub { font-weight: 600; font-size: 9.5pt; color: #2b55d6; margin: 4pt 0 1pt; }
+  ul { margin: 1pt 0 0; padding-left: 12pt; }
+  li { margin: 0 0 1.6pt; padding-left: 1pt; }
+  li::marker { color: #2b55d6; }
+  .skills { margin: 0; display: grid; grid-template-columns: 30mm 1fr; gap: 1.5pt 6pt; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14pt; }
+  .muted { color: #3a4457; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Sahil Jariwala</h1>
+    <div class="headline">Software Engineer, AI Platform &amp; Backend</div>
+    <div class="contact">
+      <div><span>Surat, India</span><span>+91 6355780321</span><span><a href="mailto:sahiljariwala6@gmail.com">sahiljariwala6@gmail.com</a></span></div>
+      <div><span><a href="https://sahiljariwala.vercel.app">sahiljariwala.vercel.app</a></span><span><a href="https://www.linkedin.com/in/sahil-jariwala-a909a71b8/">linkedin.com/in/sahil-jariwala-a909a71b8</a></span><span><a href="https://github.com/sahiljsy">github.com/sahiljsy</a></span></div>
+    </div>
+  </header>
+
+  <h2>Summary</h2>
+  <p>Backend engineer with 3.5 years of experience, the last 2.5 building an AI marketing platform from its first release. Owns the agent runtime, model routing and context management in Python, and has shipped data pipelines in Java and Go and product UI in Next.js. Reviews the team's code, mentors 3–4 developers and plans the build of the company's new data platform.</p>
+
+  <h2>Experience</h2>
+  <div class="role"><strong>Software Engineer, Strique</strong><span class="when">May 2024 – Present | Mumbai</span></div>
+  <p class="muted">AI marketing platform for e-commerce brands; about 12–15 enterprise clients, and 100+ during its free period.</p>
+
+  <div class="sub">AI agent platform (Python, FastAPI, OpenAI Agents SDK, LiteLLM)</div>
+  <ul>
+    <li>Wrote about 70% of the core agent runtime that every agent in the product runs on: streaming to the browser, tool execution, sub-agent hand-offs and persistence.</li>
+    <li>Created a model registry that routes 61 models across 9 LLM providers (OpenAI, Anthropic, Gemini and others), so each agent can change vendor through configuration instead of code.</li>
+    <li>Designed context management for long agent runs: a check before every model call that trims what the model sees without deleting stored data, plus background compaction between turns.</li>
+    <li>Diagnosed multi-minute delays before the first streamed token using live traces; removed blocking work from the request path (untuned 60-second SDK timeouts, serial DB reads, lock waits) and set new timeouts from measured latency.</li>
+    <li>Built sandboxed code execution on E2B and script-based scheduled automations that send alerts without calling an LLM when nothing needs judgement. API credentials stay on the server and never enter the sandbox.</li>
+  </ul>
+
+  <div class="sub">Data platform and pipelines (Java, Spring Boot, Spring Batch, Go, PostgreSQL)</div>
+  <ul>
+    <li>Built a filter engine that turns dashboard filter trees into parameterised SQL, used by every analytics widget, and a priority-based rule engine that edits product feeds per sales channel.</li>
+    <li>Built or maintained 35+ Spring Batch jobs pulling data from Google Ads, Google Analytics, Amazon, Meta and TikTok; moved about 15 scheduled jobs to production one at a time across 35 small pull requests.</li>
+    <li>Set up and led the shared Java library other services depend on: one API for email, Slack, WhatsApp and SMS, and a PowerPoint report generator with 15 branded templates.</li>
+    <li>Set up the architecture of a new Go customer data platform (OpenAPI-first, Pub/Sub ingestion) and leading the port of the product catalog from Java, including build order and who owns each part.</li>
+  </ul>
+
+  <div class="sub">Product and team</div>
+  <ul>
+    <li>Built 6+ ad and commerce integrations in the Next.js app (Google Ads, Meta, Amazon, Shopify, TikTok) and the chat screens for task plans and human approval steps.</li>
+    <li>Review pull requests across the team's services (about 225 merged, 130 of them from teammates) and mentor 3–4 developers through design discussions and code review.</li>
+  </ul>
+
+  <div class="role"><strong>Associate Software Engineer, HHAeXchange</strong><span class="when">Dec 2022 – Feb 2024 | Ahmedabad</span></div>
+  <ul>
+    <li>Built and maintained data processing and integration jobs in SQL Server and SSIS, with C# and VB.NET components.</li>
+    <li>Optimised legacy code and built new interfaces for a new-market project; received the Excellence Award in Q3 2023.</li>
+  </ul>
+
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt><dd>Python, Java, Go, TypeScript, JavaScript, SQL, C#</dd>
+    <dt>AI and agents</dt><dd>OpenAI Agents SDK, LiteLLM, multi-agent orchestration, context management, MCP, Mem0, Honcho, E2B</dd>
+    <dt>Backend</dt><dd>FastAPI, Spring Boot, Spring Batch, Huma, GORM, REST, OpenAPI, Protobuf</dd>
+    <dt>Data and cloud</dt><dd>PostgreSQL, ClickHouse, Redis, SQL Server, SSIS, Pub/Sub, Temporal, GCP, Docker, Kubernetes</dd>
+    <dt>Frontend</dt><dd>Next.js, React, TanStack Query, Zustand</dd>
+  </dl>
+
+  <div class="two">
+    <div>
+      <h2>Education</h2>
+      <div class="role" style="margin-top:0"><strong>B.Tech, Computer Engineering</strong><span class="when">2019 – 2023</span></div>
+      <p>Dharmsinh Desai University, Nadiad. CPI 9.31 / 10</p>
+    </div>
+    <div>
+      <h2>Achievements</h2>
+      <ul>
+        <li>CodeChef 3-star; global rank 88, June Long Challenge 2021</li>
+        <li>350+ LeetCode problems solved</li>
+        <li>HackerRank SQL (Basic); AWS Cloud Foundations</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>
