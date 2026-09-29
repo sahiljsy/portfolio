@@ -4,6 +4,3 @@ out
 .vercel
 *.tsbuildinfo
 .env*
-.env*
-# Blog drafts stay local until reviewed; publish by removing this line for approved posts.
-content/blog/*.md
